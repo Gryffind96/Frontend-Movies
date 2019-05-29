@@ -1,0 +1,20 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">MoviesApp</h1>
+    <p class="lead">Esta es una aplicación de películas basado en THE MOVIE DB</p>
+  </div>
+</div>
+
+<div class="container">
+  <br>
+
+
+ <app-galery [movies]="cartels|slice:0:6" title="Movies On Cartel"></app-galery>
+
+ <app-galery [movies]="populars|slice:0:6" title="Popular Movies"></app-galery>
+
+
+
+
+
+</div>

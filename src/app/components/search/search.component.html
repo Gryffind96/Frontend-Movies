@@ -1,0 +1,32 @@
+<div class="container main-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+              <label >Search:</label>
+              <input class="form-control" 
+              [(ngModel)]="search" 
+              name="search" 
+                (keyup.enter)="searchMovie()"
+                 type="text"
+                  placeholder="Search a movie"/>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row animated fadeIn fast">
+      <div class="card-columns">
+        <div class="card" *ngFor="let movie of ps.movies">
+          <img class="card-img-top" [src]="movie | peliculaImagen" [alt]="movie.title">
+          <div class="card-body">
+            <h5 class="card-title">{{movie.original_title}}</h5>
+            <p class="card-text text-justify">{{movie.overview |slice:0:250}}... </p>
+            <button 
+            type="button" 
+            [routerLink]="['/movie',movie.id,'search', search]"
+            class="btn btn-primary btn-block">More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
